@@ -50,9 +50,16 @@ button{
 
 
 /*Edouard*/ 
+
 .toDoList {
+    margin-left: 100px;
+    width: 700px;
+    max-width: 700px;
+    margin-top: 60px;
     background-color: aliceblue;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     border: 2px;
     border-radius: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -61,6 +68,11 @@ button{
 .Check {
 
     font-size: 8px;
+    border:darkgray;
+    color: black;
+    width: auto;
+    height: auto;
+    background-color: aliceblue;
 
 
 }
@@ -72,8 +84,9 @@ button{
     /* font seize weight*/
 }
 
-.Modify {
 
+.toDoTexte{
+    margin-top: 8px;
 }
 
 /*Edouard -->
