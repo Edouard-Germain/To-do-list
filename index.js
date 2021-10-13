@@ -1,35 +1,33 @@
-var ajouter = document.getElementById("ajouter")
+
 var bouton = document.getElementById("bouton")
 var todoContainer = document.getElementsByClassName("todoContainer");
  var list = document.getElementById("list")
 
-var task = []
+var tasks = []
 
 
 function onTaskSubmit(){
 
-    var todo = {
-        status: "",
-        text: "coucou",
-        priorite: ""
-    }
+    var inputValue = document.getElementById("input").value
+    var todo = { value: inputValue, status: "to do" }
 
     
-    task.push(todo)
+    tasks.push(todo)
 
-debugger
+    list.innerHTML = ``
 
-    task.forEach(function(task){
-        // var todoList = document.createElement(li[``])
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode(`${todo}`));
-        list.appendChild(li)
-        // list.appendChild(todoList)
-
- 
-
+    tasks.forEach(function(todo){
+        list.innerHTML = list.innerHTML + `
+        <div class="toDoList">
+        <button class="Check"> check ! </button>
+        <h4 class="toDoStatus">A faire </h4>
+        <p class="toDoTexte">${todo.value}</p>
+        <i class="fas fa-cog"></i>
+        <i class="fas fa-ban"></i>        
+    </div>`
+        
     })
 
-    console.log(task)
 }
+
 
