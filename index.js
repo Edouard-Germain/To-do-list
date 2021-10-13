@@ -35,8 +35,9 @@ function supprimer(i){
 }
 
 function edit(i){
-
-    tasks[i]
+    
+    
+    tasks[i].value = document.getElementById("inputBis").value
     displayList()
 }
 
