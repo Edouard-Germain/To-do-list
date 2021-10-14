@@ -2,8 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 body{
-    background-color: #A8F8C3;
+    
     font-family:  'Roboto', sans-serif;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,212,20,1) 0%, rgba(178,255,0,1) 100%);
 }
 .container{
     margin-top: 50px;
@@ -105,4 +107,8 @@ button{
     padding-right: 30px;
     font-family:  'Roboto', sans-serif;
    box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+select{
+border-radius: 40px;    
 }

@@ -71,8 +71,8 @@ function valider(i){
     if (document.getElementById("Selection").value !=""){
         tasks[i].status = document.getElementById("Selection").value
     }
-    if (document.getElementById("Selection").value != ""){
-         
+    if (document.getElementById("PrioritySelectorBis").value != ""){
+        tasks[i].priority = document.getElementById("PrioritySelectorBis").value
     }
     
     displayList(tasks)
