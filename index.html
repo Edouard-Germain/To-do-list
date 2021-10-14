@@ -22,9 +22,9 @@
         <div class="row">
             <div class="col-6">
                 <form class="row" onsubmit="onTaskSubmit(); return false;">
-                    <input  value="" id="input" class="col-10" type="text" placeholder="A faire..."><br>
+                    <input  value="" id="input" class="col-10 police " type="text" placeholder="A faire..."><br>
                     <button  class="col-2">Ajouter</button>
-                    <label>priorité </label>
+                    <label class="police text-light ">Priorité </label>
                     <select id = "PrioritySelector"class="mt-2">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -35,28 +35,28 @@
                 </form>
             </div>
             <div class="col-2">
-                <button onclick="random()" class="random rounded-pill">Random!!</button>
+                <button onclick="random()" class="random rounded-pill shadow p-3 mb-5 rounded">Random!</button>
             </div> 
         </div>
     
 
-        <div class="row mt-3">
+        <div class="row mt-3 ">
             <!-- <div class="ps-4"> -->
-                <label>Afficher</label>
+                <label class="police text-light">Afficher</label>
                 <div class="col-3">
-                <button class=" rounded-pill" onclick="filter('To do')"  class="random">To do</button>
+                <button class=" rounded-pill shadow p-3 mb-5 rounded" onclick="filter('To do')" class="random">To do</button>
                 </div>
                 <div class="col-2">
-                <button class=" rounded-pill" onclick="filter('Doing')"  class="random">Doing</button>
+                <button class=" rounded-pill shadow p-3 mb-5  rounded" onclick="filter('Doing')" class="random">Doing</button>
                 </div>
                 <div class="col-2">
-                <button class="rounded-pill" onclick="filter('Done')"  class="random">Done</button>
+                <button class="rounded-pill shadow p-3 mb-5  rounded" onclick="filter('Done')" class="random">Done</button>
                 </div>
             </div>
         </div>
             <div class="row mt-3">
                 <div class="ps-4 col-2">
-                <button class="buttonPrio" id=" SortPrio" onclick= "priority()"> Priorité</button>
+                <button class="buttonPrio police text-ligh " id=" SortPrio" onclick= "priority()">Priorité</button>
             </div>
         </div> 
     </div>
