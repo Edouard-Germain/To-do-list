@@ -63,18 +63,14 @@ function valider(i){
     console.log("valider input value : ", document.getElementById("inputBis").value)
     console.log("valider selecte value : ", document.getElementById("Selection").value)
     
+    
+
     if (document.getElementById("inputBis").value !=""){
         tasks[i].value = document.getElementById("inputBis").value
-    }
-    
+    } 
     if (document.getElementById("Selection").value !=""){
         tasks[i].status = document.getElementById("Selection").value
-
-    } else {
-        displayList(tasks)
-  
     }
-
     if (document.getElementById("Selection").value != ""){
          
     }
@@ -82,6 +78,15 @@ function valider(i){
     displayList(tasks)
 }
 
+function random(){
+
+    var randomTask = ["faire a manger","ranger la chambre","regarder un film"]
+    var random = randomTask[Math.floor(Math.random()*randomTask.length)]
+    console.log(random)
+    var task = {value: random, status: "to do"}
+    tasks.push(task)
+    displayList(tasks)
+}
 
 function random(){
 
@@ -109,21 +114,11 @@ displayList(filter)
 // 
 
 function priority(){
-    
-    tasks.sort((a, b) => {
-        return a.priority - b.priority;
+
+    var prio = tasks.sort((a, b) => {
+        return  b.priority- a.priority 
     })
+    
+    displayList(prio)
 
-    displayList()
 } 
-
-
-
-/* <label>priorité </label>
-            <select class="mt-2" name="" id="">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-            </select> */
