@@ -43,8 +43,8 @@ function edit(i){
     <button onClick="valider()" >valider</button>
     <select class="mt-2" id="">
     <option value="">To do</option>
-    <option value="">En cours</option>
-    <option value="">A faire</option>
+    <option value="">Doing</option>
+    <option value="">Done</option>
     </select>
     </form>`
 }
@@ -57,8 +57,13 @@ function valider(i){
     }
 
 function random(){
-
-
+    
+    var randomTask = ["faire a manger","ranger la chambre"]
+    var random = randomTask[Math.floor(Math.random()*randomTask.length)]
+    console.log(random)
+    var task = {value: random, status: "to do"}
+    tasks.push(task)
+    displayList()
 }
 
 
