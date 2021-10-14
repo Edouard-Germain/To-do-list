@@ -1,9 +1,7 @@
 var list = document.getElementById("list")
-
-var tasks = []
-
 var prio = document.getElementById("PrioritySelector")
 
+var tasks = []
 
 function displayList(array){
     list.innerHTML = ``
@@ -65,19 +63,15 @@ function valider(i){
     console.log("valider input value : ", document.getElementById("inputBis").value)
     console.log("valider selecte value : ", document.getElementById("Selection").value)
     
-    
-
-    if (document.getElementById("inputBis").value !="To do"){
+    if (document.getElementById("inputBis").value !=""){
         tasks[i].value = document.getElementById("inputBis").value
-    } else {
-        displayList()
-
     }
+    
     if (document.getElementById("Selection").value !=""){
         tasks[i].status = document.getElementById("Selection").value
 
     } else {
-        displayList()
+        displayList(tasks)
   
     }
 
@@ -89,36 +83,37 @@ function valider(i){
 }
 
 
+function random(){
 
+    var randomTask = ["faire a manger","ranger la chambre","regarder un film"]
+    var random = randomTask[Math.floor(Math.random()*randomTask.length)]
+    console.log(random)
+    var task = {value: random, status: "to do"}
+    tasks.push(task)
+    displayList(tasks)
+}
 
 function filter(status){
     
     var filter = tasks.filter(function(todo){
-    return  todo.status === status
-})
+        return  todo.status === status
+    })
 
 console.log(filter)
 displayList(filter)
 }
 
-
-
-
-
-
-
-
-
-    // Priorité : 
+// Priorité : 
 // Ajout d'une clé priorité : 
 // Différentes valeurs de clés : 1,2,3,4,5
 // 
 
 function priority(){
-
-         tasks.sort((a, b) => {
+    
+    tasks.sort((a, b) => {
         return a.priority - b.priority;
     })
+
     displayList()
 } 
 
