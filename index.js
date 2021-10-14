@@ -8,12 +8,12 @@ function displayList(){
     tasks.forEach(function(todo, i){
         list.innerHTML = list.innerHTML + `
         <div class="toDoList">
-        <button class="Check"> check ! </button>
-        <h4 class="toDoStatus">${todo.status}</h4>
-        <p class="toDoTexte">${todo.value}</p>
-        <a onClick="edit(${i})"<i class="fas fa-cog"></i>
-        <a  onClick="supprimer(${i})" <i class="fas fa-ban"></i></a>
-        <div class="modifier"></div>   
+            <button class="Check"> check ! </button>
+            <h4 class="toDoStatus">${todo.status}</h4>
+            <p class="toDoTexte">${todo.value}</p>
+            <a onClick="edit(${i})"<i class="fas fa-cog"></i>
+            <a  onClick="supprimer(${i})" <i class="fas fa-ban"></i></a>
+            <div class="modifier"></div>   
         </div>
         `
     })
@@ -36,25 +36,33 @@ function supprimer(i){
 function edit(i){
 
     var modifier = document.getElementsByClassName("modifier")[i]
-    
+    console.log("edit html element : ", modifier)
     modifier.innerHTML = modifier.innerHTML + `
     <form >
-    <input  value="" id="inputBis"  type="text" placeholder="A faire..."><br>
-    <button onClick="valider()" >valider</button>
-    <select class="mt-2" id="">
-    <option value="">To do</option>
-    <option value="">En cours</option>
-    <option value="">A faire</option>
-    </select>
+        <input  value="" id="inputBis"  type="text" placeholder="A faire..."><br>
+        <select id ="Selection" class="mt-2" id="">
+            <option value="To do">To do</option>
+            <option value="Doing">En cours</option>
+            <option value="Done">A faire</option>
+        </select>
+        <button onClick="valider(${i})" >valider</button>
     </form>`
+        
+    
 }
 
 function valider(i){
+    console.log("valider input value : ", document.getElementById("inputBis").value)
+    console.log("valider selecte value : ", document.getElementById("Selection").value)
 
     tasks[i].value = document.getElementById("inputBis").value
-     displayList()
-
+    tasks[i].status = document.getElementById("Selection").value
+    
+    displayList()
+    
     }
+
+
 
 function random(){
 
