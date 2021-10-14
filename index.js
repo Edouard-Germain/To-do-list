@@ -4,10 +4,11 @@ var tasks = []
 
 var prio = document.getElementById("PrioritySelector")
 
-function displayList(){
+
+function displayList(array){
     list.innerHTML = ``
 
-    tasks.forEach(function(todo, i){
+    array.forEach(function(todo, i){
         list.innerHTML = list.innerHTML + `
         <div class="toDoList">
             <button class="Check"> check ! </button>
@@ -27,13 +28,13 @@ function onTaskSubmit(){
     var inputValue = document.getElementById("input").value
     var todo = { value: inputValue, status: "To do", priority: prioValue }
     tasks.push(todo)
-    displayList()
+    displayList(tasks)
 }
 
 function supprimer(i){
 
     tasks.splice(i, 1)
-    displayList()
+    displayList(tasks)
 }
 
 function edit(i){
@@ -45,8 +46,8 @@ function edit(i){
         <input  value="" id="inputBis"  type="text" placeholder="A faire..."><br>
         <select id ="Selection" class="mt-2" id="">
             <option value="To do">To do</option>
-            <option value="Doing">En cours</option>
-            <option value="Done">A faire</option>
+            <option value="Doing">Doing</option>
+            <option value="Done">Done</option>
         </select>
         <select id ="PrioritySelectorBis" class="mt-2">
                         <option value="1">1</option>
@@ -57,11 +58,10 @@ function edit(i){
         </select>
         <button onClick="valider(${i})" >valider</button>
     </form>`
-        
-    
 }
 
 function valider(i){
+
     console.log("valider input value : ", document.getElementById("inputBis").value)
     console.log("valider selecte value : ", document.getElementById("Selection").value)
     
@@ -85,16 +85,21 @@ function valider(i){
          
     }
     
-    displayList()
+    displayList(tasks)
+}
+
+
+
+
+function filter(status){
     
-    }
+    var filter = tasks.filter(function(todo){
+    return  todo.status === status
+})
 
-
-
-
-
-
-
+console.log(filter)
+displayList(filter)
+}
 
 
 
