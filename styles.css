@@ -95,4 +95,14 @@ button{
     margin-top: 8px;
 }
 
-/*Edouard -->
+
+.buttonPrio{
+    font-family: roboto;
+    border-radius: 60px;
+    background-color: orange;
+    margin-left: 30px ;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family:  'Roboto', sans-serif;
+   box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
