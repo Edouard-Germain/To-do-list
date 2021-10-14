@@ -24,6 +24,14 @@
                 <form class="row" onsubmit="onTaskSubmit(); return false;">
                     <input  value="" id="input" class="col-10" type="text" placeholder="A faire..."><br>
                     <button  class="col-2">Ajouter</button>
+                    <label>priorité </label>
+                    <select id = "PrioritySelector"class="mt-2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </form>
             </div>
             <div class="col-2">
@@ -34,13 +42,25 @@
         <div class="row mt-3">
             <div class="ps-4 select">
                 <label>Afficher</label>
-                <select class="mt-2" name="" id="">
+                <select class="mt-2" name="" id="SelectPriority">
                     <option value="">A faire</option>
                     <option value="">En cours</option>
                     <option value="">A faire</option>
                 </select>
             </div>
         </div>
+            <div class="row mt-3">
+                <div class="ps-4 select">
+                <label>priorité </label>
+                <select class="mt-2" name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                </select>
+            </div>
+        </div> 
     </div>
 
 
