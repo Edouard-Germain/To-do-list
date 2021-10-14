@@ -1,7 +1,4 @@
-
-
 var list = document.getElementById("list")
-
 
 var tasks = []
 
@@ -19,7 +16,6 @@ function displayList(){
         <div class="modifier"></div>   
         </div>
         `
-        
     })
 }
 
@@ -32,6 +28,7 @@ function onTaskSubmit(){
 }
 
 function supprimer(i){
+
     tasks.splice(i, 1)
     displayList()
 }
@@ -40,14 +37,29 @@ function edit(i){
 
     var modifier = document.getElementsByClassName("modifier")[i]
     
-    
     modifier.innerHTML = modifier.innerHTML + `
     <form >
-    <input  value="" id="input"  type="text" placeholder="A faire..."><br>
-    <button id="bouton">valider</button>
+    <input  value="" id="inputBis"  type="text" placeholder="A faire..."><br>
+    <button onClick="valider()" >valider</button>
+    <select class="mt-2" id="">
+    <option value="">To do</option>
+    <option value="">En cours</option>
+    <option value="">A faire</option>
+    </select>
     </form>`
-    
-    tasks[i].value = document.getElementById("inputBis").value
-    displayList()
 }
+
+function valider(i){
+
+    tasks[i].value = document.getElementById("inputBis").value
+     displayList()
+
+    }
+
+function random(){
+
+
+}
+
+
 
